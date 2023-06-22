@@ -41,6 +41,7 @@ body {
  */
 main {
   display: block;
+  
 }
 
 /**
@@ -245,7 +246,7 @@ fieldset {
 legend {
   box-sizing: border-box;
   /* 1 */
-  color: inherit;
+  color: white;
   /* 2 */
   display: table;
   /* 1 */
@@ -378,8 +379,8 @@ html {
 }
 
 body {
-  color: #404040;
-  background: white;
+  color: white;
+  background-color: #000000;
   font-size: 1rem;
 }
 
@@ -409,7 +410,7 @@ h5 {
   font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica,
     Arial, sans-serif;
   line-height: 1.2;
-  color: #404040;
+  color: white;
 }
 
 h1:not(:first-child),
@@ -470,14 +471,14 @@ h5 {
 }
 
 a {
-  color: #0366ee;
+  color: white;
   text-decoration: none;
 }
 
 a:hover,
 a:active,
 a:focus {
-  color: #0246a2;
+  color: white;
   text-decoration: underline;
 }
 
@@ -488,7 +489,7 @@ mark {
 
 blockquote {
   margin: 0 0 1.5rem 0;
-  border-left: 16px solid #f0f0f0;
+  border-left: 16px solid white;
   padding: 0 1.5rem;
   font-size: 1.5rem;
 }
@@ -506,7 +507,7 @@ pre {
   background: transparent;
   padding: 1rem;
   tab-size: 2;
-  color: #404040;
+  color: white;
   font-family: Menlo, monospace;
   font-size: 14px;
   margin: 0 0 1.5rem 0;
@@ -870,9 +871,9 @@ a.accent-button:active {
 
 .muted-button,
 a.muted-button {
-  background: transparent;
+  background: #0366ee;
   border: 1px solid #cdcdcd;
-  color: #4e4e4e;
+  color: white;
 }
 
 .muted-button:hover,
@@ -881,9 +882,9 @@ a.muted-button {
 a.muted-button:hover,
 a.muted-button:focus,
 a.muted-button:active {
-  color: #4e4e4e;
+  color: white;
   border: 1px solid #818181;
-  background: transparent;
+  background: #0250bc;
 }
 
 .round-button,
@@ -932,6 +933,7 @@ textarea {
   width: 100%;
   max-width: 100%;
   line-height: 1;
+  color: white;
 }
 
 [type='color']:hover,
@@ -950,7 +952,7 @@ textarea {
 [type='time']:hover,
 select:hover,
 textarea:hover {
-  border: 1px solid #c5c5c5;
+  border: 1px solid white;
 }
 
 [type='color']:focus,
@@ -1112,7 +1114,7 @@ caption {
 }
 
 .striped-table tbody tr:nth-child(odd) {
-  background-color: #f8f8f8;
+  background-color: #0f1b61;
 }
 
 .contain-table {
