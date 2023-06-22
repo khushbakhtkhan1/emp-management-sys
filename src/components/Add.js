@@ -2,12 +2,15 @@ import React, { useState, useRef, useEffect } from 'react'
 import Swal from 'sweetalert2';
 
 function Add({ employees, setEmployees, setIsAdding }) {
-
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [email, setEmail] = useState('');
-    const [salary, setSalary] = useState('');
-    const [date, setDate] = useState('');
+    const [formData,setFormData]=useState(
+        {
+            firstName:"",
+            lastName:"",
+            email:"",
+            salary:"",
+            date:""
+        }
+    )
 
     const textInput = useRef(null);
 
@@ -17,7 +20,7 @@ function Add({ employees, setEmployees, setIsAdding }) {
 
     const handleAdd = e => {
         e.preventDefault();
-        if (!firstName || !lastName || !email || !salary || !date) {
+        if (!formData.firstName || !formData.lastName || !formData.email ||!formData.salary ||!formData.date) {
             return Swal.fire({
                 icon: 'error',
                 title: 'Error!',
@@ -28,12 +31,12 @@ function Add({ employees, setEmployees, setIsAdding }) {
 
         const id = employees.length + 1;
         const newEmployee = {
-            id,
-            firstName,
-            lastName,
-            email,
-            salary,
-            date
+            firstName: formData.firstName,
+            lastName: formData.lastName,
+            email: formData.email,
+            salary: formData.salary,
+            date: formData.date
+
         }
         employees.push(newEmployee);
         setEmployees(employees);
@@ -42,7 +45,7 @@ function Add({ employees, setEmployees, setIsAdding }) {
         Swal.fire({
             icon: 'success',
             title: 'Added!',
-            text: `${firstName} ${lastName}'s data has been Added.`,
+            text: `${formData.firstName} ${formData.lastName}'s data has been Added.`,
             showConfirmButton: false,
             timer: 1500
         });
@@ -59,40 +62,40 @@ function Add({ employees, setEmployees, setIsAdding }) {
                     type="text"
                     ref={textInput}
                     name="firstName"
-                    value={firstName}
-                    onChange={e => setFirstName(e.target.value)}
+                    value={formData.firstName}
+                    onChange={e => setFormData({...formData,firstName:e.target.value})}
                 />
                 <label htmlFor="lastName">Last Name</label>
                 <input
                     id="lastName"
                     type="text"
                     name="lastName"
-                    value={lastName}
-                    onChange={e => setLastName(e.target.value)}
+                    value={formData.lastName}
+                    onChange={e => setFormData({...formData,lastName:e.target.value})}
                 />
                 <label htmlFor="email">Email</label>
                 <input
                     id="email"
                     type="email"
                     name="email"
-                    value={email}
-                    onChange={e => setEmail(e.target.value)}
+                    value={formData.email}
+                    onChange={e => setFormData({...formData,email:e.target.value})}
                 />
                 <label htmlFor="salary">Salary ($)</label>
                 <input
                     id="salary"
                     type="number"
                     name="salary"
-                    value={salary}
-                    onChange={e => setSalary(e.target.value)}
+                    value={formData.salary}
+                    onChange={e => setFormData({...formData,salary:e.target.value})}
                 />
                 <label htmlFor="date">Date</label>
                 <input
                     id="date"
                     type="date"
                     name="date"
-                    value={date}
-                    onChange={e => setDate(e.target.value)}
+                    value={formData.date}
+                    onChange={e => setFormData({...formData,date:e.target.value})}
                 />
                 <div style={{ marginTop: '30px' }}>
                     <input type="submit" value="Add" />
