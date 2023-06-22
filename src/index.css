@@ -1091,6 +1091,7 @@ table {
 
 thead th {
   border-bottom: 2px solid #dedede;
+  border-top: 2px solid #dedede;
 }
 
 tfoot th {
